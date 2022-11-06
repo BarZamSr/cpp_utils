@@ -41,13 +41,16 @@ public:
 	String(const char * A, int n): List<char>(A, n) {
 		// hmmm
 	}
+	String(std::string other): List<char>(other.c_str(), c_str_len(other.c_str())) {
+		// hmmm
+	}
 
 	String operator+ (const String & other) const {
 		String sum(*this);
 		sum += other;
 		return sum;
 	}
-/*
+
 	int find(const String & sub_str) {
 		return find(sub_str, 0, len);
 	}
@@ -64,7 +67,7 @@ public:
 		}
 		return ERR_VAL;
 	}
-*/
+	
 	List<String> split(char c) {
 		List<String> sub_strings;
 

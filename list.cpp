@@ -5,6 +5,7 @@
 #include <cassert>
 #include <cmath>
 #include <cassert>
+#include <cstring>
 
 #include <iostream>
 
@@ -74,7 +75,6 @@ public:
 		len = n;
 	}
 	List(const List & other): List(other.cap) {
-		//LOG("List(other)");
 		assert(other.len >= 0);
 
 		len = other.len;
@@ -83,7 +83,6 @@ public:
 		}
 	}
 	List(const List && other): List(other.cap) {
-		assert(0 == 1);
 		len = other.len;
 
 		if (len != 0) {
