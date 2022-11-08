@@ -9,11 +9,7 @@ int main() {
 	String s3 = "Climb aboard, get ready to explore ";
 	String s4 = "There's so much to find, Little Einsteins ";
 
-	// hot potato conversion
-	std::string s1_std = s1.begin();
-	s1 = s1_std;
-
-	LOG(s1_std);
+	LOG(s1.split(' '));
 
 	return 0;
 }

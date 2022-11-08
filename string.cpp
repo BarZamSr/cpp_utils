@@ -50,23 +50,6 @@ public:
 		sum += other;
 		return sum;
 	}
-
-	int find(const String & sub_str) {
-		return find(sub_str, 0, len);
-	}
-	int find(const String & sub_str, int start) {
-		return find(sub_str, start, len);
-	}
-	int find(const String & sub_str, int start, int end) {
-		LOG("find(String)");
-		for(int i=0; i<len; i++) {
-			for(int j=0; i+j<len; j++) {
-				if(j == sub_str.len) return i;
-				if(array[i+j] != sub_str[j]) break;
-			}
-		}
-		return ERR_VAL;
-	}
 	
 	List<String> split(char c) {
 		List<String> sub_strings;

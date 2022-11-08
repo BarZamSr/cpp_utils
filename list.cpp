@@ -213,7 +213,6 @@ protected:
 	int len, cap;
 
 	List(int n) {
-		// LOG("List(n)");
 		assert(n >= 0);
 		n = std::max(n, MIN_LIST_SIZE);
 		n = fib_after(n-1); // at least n
