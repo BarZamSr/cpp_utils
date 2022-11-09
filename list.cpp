@@ -65,8 +65,9 @@ public:
 		// hmmm
 	}
 	List(std::initializer_list<T> A): List(A.size()) {
-		len = A.size();
-		copy(A.begin(), array, A.size());
+		for(const T & elem: A) {
+			push(elem);
+		}
 	}
 	List(const T * A, int n): List(n) {
 		assert(A != NULL);
@@ -91,7 +92,6 @@ public:
 		}
 	}
 	~List() {
-		// LOG("~List()");
 		std::free(array);
 	}
 
@@ -161,7 +161,7 @@ public:
 		return ERR_VAL;
 	}
 
-	void push(T object) {
+	void push(const T & object) {
 		if (len == cap) {
 			expand();
 		}

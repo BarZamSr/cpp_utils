@@ -67,7 +67,7 @@ public:
 		}
 		if (len != last) { // skip empty strings
 			sub_strings.push(
-				String(array+last, curr-last)
+				String(array+last, len-last)
 			);
 		}
 
