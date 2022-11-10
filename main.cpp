@@ -9,11 +9,5 @@ int main() {
 	String s3 = "Climb aboard, get ready to explore";
 	String s4 = "There's so much to find, Little Einsteins";
 
-	LOG(s1);
-
-	List<String> S = {s1, s2, s3, s4};
-
-	LOG(S.join(' ').split(' '));
-
 	return 0;
 }

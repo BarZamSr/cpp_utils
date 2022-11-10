@@ -74,6 +74,19 @@ public:
 		return sub_strings;
 	}
 
+	bool operator== (const String & other) {
+		if (len != other.len) {
+			return false;
+		}
+		else {
+			return std::memcmp(array, other.array, len) == 0;
+		}
+	}
+
+	bool operator!= (const String & other) {
+		return !(*this == other);
+	}
+
 	friend std::ostream & operator<< (std::ostream & stream,
 						const String & string) {
 		for(const char & c: string) {
