@@ -1,7 +1,6 @@
 #include <iostream>
 
-#include "list.cpp"
-#include "string.cpp"
+#include "string.h"
 
 int main() {
 	String s1 = "We're going on a trip in our favorite rocket ship";
