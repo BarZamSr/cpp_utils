@@ -67,13 +67,15 @@ public:
 			push(elem);
 		}
 	}
-	List(const T * A, int n): List(n) {
+	List(T const* A, int n): List(n) {
 		assert(A != NULL);
 
-		copy(A, array, n);
-		len = n;
+		if (n > 0) {
+			copy(A, array, n);
+			len = n;
+		}
 	}
-	List(const List & other): List(other.cap) {
+	List(List const& other): List(other.cap) {
 		assert(other.len >= 0);
 
 		len = other.len;
@@ -81,7 +83,7 @@ public:
 			copy(other.array, array, len);
 		}
 	}
-	List(const List && other): List(other.cap) {
+	List(List const&& other): List(other.cap) {
 		len = other.len;
 
 		if (len != 0) {
@@ -136,7 +138,7 @@ public:
 		}
 	}
 	List<T> slice(int start, int finish) const {
-		assert(start < finish);
+		assert(start <= finish);
 		assert(start >= 0);
 		assert(finish <= len);
 
@@ -200,6 +202,9 @@ public:
 
 	template <typename x> // x is what T is made of (e.g. char, string)
 	T join(x c);
+
+	T join();
+
 
 	friend std::ostream & operator<< (std::ostream & stream,
 						const List<T> & list) {

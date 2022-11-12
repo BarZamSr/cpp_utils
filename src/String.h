@@ -1,6 +1,6 @@
 #pragma once
 
-#include "list.h"
+#include "List.h"
 
 class String: public List<char> {
 	String(int);
@@ -19,7 +19,12 @@ bool operator== (String const&, String const&);
 
 String operator+ (String const&, String const&);
 
+std::ostream & operator<< (std::ostream &, String const&);
+
 // opposite of the split function
 template<>
 template<>
 String List<String>::join(char);
+
+template<>
+String List<String>::join();
