@@ -28,3 +28,9 @@ String List<String>::join(char);
 
 template<>
 String List<String>::join();
+
+template <>
+class std::hash<String> {
+public:
+	std::size_t operator() (String const&) const;
+};

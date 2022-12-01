@@ -107,3 +107,8 @@ String List<String>::join() {
 	}
 	return sum;
 }
+
+std::size_t std::hash<String>::operator() (String const& string) const {
+	std::hash<std::string> hasher;
+	return hasher(std::string(string.begin()));
+}
